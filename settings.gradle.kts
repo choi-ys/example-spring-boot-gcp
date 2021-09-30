@@ -1,1 +1,1 @@
-rootProject.name = "bigquery"
+rootProject.name = "spring-boot-gcp"
