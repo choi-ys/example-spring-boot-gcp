@@ -19,7 +19,8 @@ buildscript {
     }
 
     dependencies {
-        classpath("${boot}:spring-boot-gradle-plugin:${springBootVersion}") //spring-boot project를 gradle로 build하기 위한 dependency
+        classpath("${boot}:spring-boot-gradle-plugin:${springBootVersion}")
+        //spring-boot project를 gradle로 build하기 위한 dependency
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
         classpath("io.spring.gradle:dependency-management-plugin:1.0.11.RELEASE")
         classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
@@ -109,31 +110,5 @@ subprojects {
         useJUnitPlatform()
     }
 }
-
-/**
- * spring boot plugin 적용 후 build 시 실행 가능한 jar이 생성되므로
- * spring boot를 실행 시키는 application이 존재 하지 않는 sub-module-project 에서는 오류 발생
- * 따라서, jar생성이 필요 없는 sub-module-project에서는 bootJar task(실행 가능한 jar를 생성)를 제외 한다.
- */
-//["core-module", "domain-module", "in-system-module"].each {
-//    def subProjectDir = new File(projectDir, it)
-//    subProjectDir.eachDir {dir->
-//        def projectName = ":${it}-${dir.name}"
-//        project(projectName){
-//            bootJar.enabled(false)
-//            jar.enabled(true)
-//        }
-//    }
-//}
-//
-//["application"].each {
-//    def subProjectDir = new File(projectDir, it)
-//    subProjectDir.eachDir {dir->
-//        def projectName = ":${it}-${dir.name}"
-//        project(projectName){
-//
-//        }
-//    }
-//}
 
 help.enabled(false)
