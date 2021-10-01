@@ -1,0 +1,9 @@
+gcp:
+  project-id: spring-boot-gcp-example
+  bucket-name: file-upload-example-bucket
+
+#spring:
+#  cloud:
+#    gcp:
+#      credentials:
+#        location: classpath:spring-boot-gcp-example-f0c868850e73.json
